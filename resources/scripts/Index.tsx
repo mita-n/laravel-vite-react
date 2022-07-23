@@ -4,7 +4,7 @@ import * as ReactDom from 'react-dom';
 const Index = () => {
     return (
         <div>
-        react test blog.
+        私ポンコツアンドロイドぉ
         </div>
     );
 }
