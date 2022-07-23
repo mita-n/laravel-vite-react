@@ -1,15 +1,26 @@
-import * as React from 'react';
+import React, { useState } from "react";
 import * as ReactDom from 'react-dom';
 
 const Index = () => {
 
     let now = new Date().getHours();
 
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+        // Hooksを用いているのでthisを使わなくてもstateを参照できる
+        setCount(() => count + 1);
+    };
+
     if (now !== 16) {
         return (
             <div>
-            私ポンコツアンドロイドぉ
-            たすけてぇ
+                <p>
+                    私ポンコツアンドロイドぉ
+                    たすけてぇ
+                </p>
+                <p>You clicked {count} times</p>
+                <button onClick={handleClick}>+1</button>
             </div>
         );
     }else {
