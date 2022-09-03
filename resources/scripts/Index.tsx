@@ -1,28 +1,30 @@
 import React, { useState } from "react";
 import * as ReactDom from 'react-dom';
+import randomCount from './components/randomCounter'
+import Ruru from './components/ruru'
+import Ping from './components/pingdrum'
 
 const Index = () => {
-
-    //16時だけなぜかユリ熊になる　ここで現在時間を取得
-    let now = new Date().getHours();
-    
-    //数字をランダムにカウントする
+        //数字をランダムにカウントする
     //const [状態変数, 状態を変更するための関数] = useState(状態の初期値);
     const [count, setCount] = useState(0);
     const handleClick = () => {
         // Hooksを用いているのでthisを使わなくてもstateを参照できる
         setCount(() => count + Math.floor(Math.random() * 100));
     };
-    //数字をランダムにカウントする ここまで
+    console.log(setCount)
 
     const [nihehe, nihe] = useState('舐花');
-    const arusutoromeria = ['甘奈','千雪','舐花'];
+    const arusutoromeria = [1, 2, 3];
     const randomSummer = () => {
-        arusutoromeria.map((nihe, index) =>{
-            return nihe;
-        })
+        for(let i = 0; i < arusutoromeria.length; i++){
+            console.log(arusutoromeria[i])
+        }
     }
-    console.log(nihe)
+    console.log(arusutoromeria.length)
+
+    //16時だけなぜかユリ熊になる　ここで現在時間を取得
+    let now = new Date().getHours();
 
     if (now !== 16) {
         return (
@@ -35,22 +37,23 @@ const Index = () => {
                 <li> {count}</li>
                 <button onClick={handleClick}>random</button>
                 <button onClick={randomSummer}>{nihehe}</button>
+                <Ruru color="#00a8db" fontSize="25px">てりやき</ Ruru>
             </>
         );
     }else {
         return (
-            <div>
+            <>
                 <div>
-                    unchi
+                    <div>
+                        unchi
+                    </div>
+                    <div>
+                        { now }時
+                    </div>
+                    <Ping></Ping>
                 </div>
-                <div>
-                    { now }時
-                </div>
-                <div>
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/61DJNNL8EgL._RI_.jpg" alt="nothing" />
-                </div>
-            </div>
+            </>
         );
     }
 }
-ReactDom.render(<Index />, document.getElementById('index'));
+ReactDom.render(<Index></Index>, document.getElementById('index'));
