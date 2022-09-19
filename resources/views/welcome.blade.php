@@ -9,17 +9,19 @@
     @client
     @tag('Index')
 </head>
-<div data-relative-input="true" id="scene" style="margin:auto">
-    <div data-depth="0.4">苦しい</div>
-</div>
-<script>
-    var scene = document.getElementById('scene');
-    var parallaxInstance = new Parallax(scene, {
-        relativeInput: true
-    });
-    parallaxInstance.friction(0.2, 0.2);
-</script>
-<div id="index"></div>
-<div id="pome"></div>
+<body>
+    <div class="container">
+        <div data-relative-input="true" id="scene" style="margin:auto">
+            <div data-depth="0.4">苦しい</div>
+        </div>
+        <div id="index"></div>
+    </div>
 </body>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene, {
+            relativeInput: true
+        });
+        parallaxInstance.friction(0.2, 0.2);
+    </script>
 </html>
