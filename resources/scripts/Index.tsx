@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as ReactDom from 'react-dom';
-import randomCount from './components/randomCounter'
 import Ruru from './components/ruru'
 import Ping from './components/pingdrum'
 
